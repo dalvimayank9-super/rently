@@ -1,29 +1,45 @@
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Rently | Managed Peer-to-Peer Equipment Rental with RentPoints</title>
+
   <!-- WhatsApp & Social Media Preview Cards -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://dalvimayank9-super.github.io/rently/" />
-<meta property="og:title" content="RENTLY — Equipment Rental Marketplace" />
-<meta property="og:description" content="Rent what you need. Earn from what you own. Managed peer-to-peer equipment sharing with verified RentPoints." />
-<meta property="og:site_name" content="RENTLY" />
-<meta property="og:image" content="https://dalvimayank9-super.github.io/rently/preview.png" />
-  <meta name="description" content="Access high-quality cameras, projectors, audio, and gear without buying. Safe physical handover via local RentPoint hubs and zero-deposit framework." />
-  
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dalvimayank9-super.github.io/rently/" />
+  <meta property="og:title" content="RENTLY — Equipment Rental Marketplace" />
+  <meta property="og:description" content="Rent what you need. Earn from what you own. Managed peer-to-peer equipment sharing with verified RentPoints." />
+  <meta property="og:site_name" content="RENTLY" />
+  <meta property="og:image" content="https://dalvimayank9-super.github.io/rently/preview.png" />
+
+  <meta
+    name="description"
+    content="Access high-quality cameras, projectors, audio, and gear without buying. Safe physical handover via local RentPoint hubs and zero-deposit framework."
+  />
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
 
   <style>
     :root {
-      --primary: #0F2D3D;     /* Navy: Trust & Stability */
-      --secondary: #FF8A1F;   /* Orange: Energy & Action */
-      --bg-light: #F4F6F9;    /* Clean background */
-      --text-dark: #222222;   /* Readability */
+      --primary: #0F2D3D;
+      --secondary: #FF8A1F;
+      --bg-light: #F4F6F9;
+      --text-dark: #222222;
       --card-white: #FFFFFF;
       --border-color: #E2E8F0;
       --success: #16A34A;
@@ -49,7 +65,10 @@
       color: var(--primary);
     }
 
-    /* Header & Nav */
+    /* =========================
+       HEADER & NAVIGATION
+    ========================= */
+
     header {
       position: sticky;
       top: 0;
@@ -130,6 +149,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       padding: 12px 24px;
       border-radius: 8px;
@@ -164,7 +184,7 @@
       color: #fff;
     }
 
-    /* Mobile Menu Toggle */
+    /* Mobile Menu */
     .menu-btn {
       display: none;
       background: none;
@@ -174,7 +194,10 @@
       cursor: pointer;
     }
 
-    /* Hero Section */
+    /* =========================
+       HERO SECTION
+    ========================= */
+
     .hero {
       padding: 80px 24px 60px;
       max-width: 1200px;
@@ -239,7 +262,10 @@
       color: #777;
     }
 
-    /* Interactive Live Demonstration Card */
+    /* =========================
+       HERO MOCKUP
+    ========================= */
+
     .mock-handover-card {
       background: var(--card-white);
       border-radius: 20px;
@@ -285,7 +311,10 @@
       color: var(--primary);
     }
 
-    /* About Section */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
     .section-wrap {
       max-width: 1200px;
       margin: 0 auto;
@@ -330,7 +359,240 @@
       margin-bottom: 20px;
     }
 
-    /* Products / Catalog Showcase */
+    /* =========================
+       RENTPOINT SECTION
+    ========================= */
+
+    #rentpoints {
+      scroll-margin-top: 100px;
+    }
+
+    .rentpoint-section {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #0F2D3D 0%, #163D50 100%);
+      border-radius: 24px;
+      padding: 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+    }
+
+    .rentpoint-section::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: rgba(255, 138, 31, 0.08);
+      border-radius: 50%;
+      right: -80px;
+      top: -100px;
+    }
+
+    .rentpoint-section::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+      left: -80px;
+      bottom: -90px;
+    }
+
+    .rentpoint-section.highlight-rentpoint {
+      animation: rentpointHighlight 2.2s ease;
+    }
+
+    @keyframes rentpointHighlight {
+      0% {
+        border-color: transparent;
+        box-shadow: 0 0 0 rgba(255, 138, 31, 0);
+      }
+
+      20% {
+        border-color: var(--secondary);
+        box-shadow:
+          0 0 0 6px rgba(255, 138, 31, 0.12),
+          0 0 45px rgba(255, 138, 31, 0.45);
+      }
+
+      55% {
+        border-color: var(--secondary);
+        box-shadow:
+          0 0 0 10px rgba(255, 138, 31, 0.06),
+          0 0 60px rgba(255, 138, 31, 0.25);
+      }
+
+      100% {
+        border-color: transparent;
+        box-shadow: 0 0 0 rgba(255, 138, 31, 0);
+      }
+    }
+
+    .rentpoint-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .rentpoint-info h2 {
+      color: #fff;
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .rentpoint-info h2 span {
+      color: var(--secondary);
+    }
+
+    .rentpoint-info > p {
+      color: #CBD5E1;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .rentpoint-features {
+      display: grid;
+      gap: 12px;
+    }
+
+    .rentpoint-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #E2E8F0;
+      font-size: 13px;
+    }
+
+    .rentpoint-feature i {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 138, 31, 0.14);
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Apex Hub Card */
+    .apex-hub-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      color: var(--text-dark);
+    }
+
+    .apex-header {
+      background: var(--primary);
+      padding: 20px;
+      color: #fff;
+    }
+
+    .apex-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .apex-status {
+      background: #DCFCE7;
+      color: #15803D;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .apex-header h3 {
+      color: #fff;
+      font-size: 21px;
+      margin-top: 12px;
+    }
+
+    .apex-location {
+      color: #CBD5E1;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .apex-body {
+      padding: 22px;
+    }
+
+    .apex-equipment {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .apex-equipment-icon {
+      width: 55px;
+      height: 55px;
+      background: #EEF2F5;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 25px;
+      flex-shrink: 0;
+    }
+
+    .apex-equipment strong {
+      font-size: 14px;
+    }
+
+    .apex-equipment small {
+      display: block;
+      color: var(--success);
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .apex-process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .apex-step {
+      text-align: center;
+      padding: 12px 6px;
+      background: #F8FAFC;
+      border-radius: 10px;
+    }
+
+    .apex-step i {
+      color: var(--secondary);
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .apex-step span {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* =========================
+       PRODUCTS / CATALOG
+    ========================= */
+
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -350,7 +612,8 @@
       transition: all 0.2s;
     }
 
-    .filter-btn.active, .filter-btn:hover {
+    .filter-btn.active,
+    .filter-btn:hover {
       background: var(--primary);
       color: #fff;
       border-color: var(--primary);
@@ -438,79 +701,120 @@
       color: var(--primary);
     }
 
-    /* Contact Section & Form */
-    .contact-container {
-      background: var(--card-white);
-      border-radius: 20px;
+    /* =========================
+       COMPACT CONTACT SECTION
+    ========================= */
+
+    #contact {
+      scroll-margin-top: 100px;
+    }
+
+    .compact-contact {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
       border: 1px solid var(--border-color);
-      padding: 48px;
+      border-radius: 16px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .compact-contact-info h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .compact-contact-info > p {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .compact-contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .compact-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 11px;
+      color: #555;
+    }
+
+    .compact-contact-item i {
+      color: var(--secondary);
+    }
+
+    .compact-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 10px;
     }
 
-    .contact-info h3 {
-      font-size: 26px;
-      margin-bottom: 16px;
+    .compact-form .full-width {
+      grid-column: 1 / -1;
     }
 
-    .contact-point {
-      display: flex;
-      gap: 16px;
-      margin-top: 24px;
-      align-items: flex-start;
-    }
-
-    .contact-point i {
-      font-size: 20px;
-      color: var(--secondary);
-      margin-top: 4px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-group label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .form-control {
-      padding: 12px 14px;
-      border-radius: 8px;
+    .compact-form .form-control {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 7px;
       border: 1px solid var(--border-color);
       font-family: 'Poppins', sans-serif;
-      font-size: 14px;
+      font-size: 12px;
       outline: none;
     }
 
-    .form-control:focus {
+    .compact-form .form-control:focus {
       border-color: var(--secondary);
-      box-shadow: 0 0 0 3px rgba(255, 138, 31, 0.15);
+      box-shadow: 0 0 0 3px rgba(255, 138, 31, 0.12);
+    }
+
+    .compact-form textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .compact-form label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .compact-form .btn {
+      padding: 9px 16px;
+      font-size: 12px;
+      width: fit-content;
     }
 
     .success-alert {
       display: none;
       background: #DCFCE7;
       color: #15803D;
-      padding: 14px;
+      padding: 12px;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 500;
       text-align: center;
+      margin-bottom: 10px;
     }
 
-    /* Footer */
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       background: var(--primary);
       color: #fff;
@@ -560,15 +864,36 @@
       color: #94A3B8;
     }
 
-    /* Responsive */
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
     @media (max-width: 992px) {
-      .hero, .contact-container { grid-template-columns: 1fr; }
-      .catalog-grid, .grid-3 { grid-template-columns: repeat(2, 1fr); }
-      .footer-wrap { grid-template-columns: 1fr 1fr; }
+      .hero,
+      .compact-contact {
+        grid-template-columns: 1fr;
+      }
+
+      .catalog-grid,
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rentpoint-content {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+
+      .nav-links {
+        display: none;
+      }
+
       .nav-links.active {
         display: flex;
         flex-direction: column;
@@ -580,18 +905,93 @@
         padding: 24px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       }
-      .menu-btn { display: block; }
-      .hero h1 { font-size: 34px; }
-      .catalog-grid, .grid-3 { grid-template-columns: 1fr; }
-      .footer-wrap { grid-template-columns: 1fr; }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero-trust-points {
+        flex-wrap: wrap;
+      }
+
+      .catalog-grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .rentpoint-section {
+        padding: 25px;
+        border-radius: 18px;
+      }
+
+      .rentpoint-info h2 {
+        font-size: 27px;
+      }
+
+      .compact-contact {
+        padding: 22px;
+      }
+
+      .compact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .compact-form .full-width {
+        grid-column: auto;
+      }
+
+      .footer-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .nav-container {
+        padding: 12px 18px;
+      }
+
+      .logo-text {
+        font-size: 21px;
+      }
+
+      .hero {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .section-wrap {
+        padding: 55px 18px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .apex-process {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
   <header>
     <div class="nav-container">
+
       <a href="#home" class="brand-logo">
         <div class="logo-badge">
           <span>R</span>
@@ -605,441 +1005,1660 @@
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Model</a></li>
-        <li><a href="#services">Equipment Catalog</a></li>
-        <li><a href="#rentpoints">RentPoints</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-        <li><a href="#services" class="btn btn-primary" style="padding: 8px 18px;">Rent Gear</a></li>
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#about">About Model</a>
+        </li>
+
+        <li>
+          <a href="#services">Equipment Catalog</a>
+        </li>
+
+        <!-- RENTPOINT NOW WORKS -->
+        <li>
+          <a href="#rentpoints" class="rentpoint-link">
+            RentPoints
+          </a>
+        </li>
+
+        <!-- Contact Us replaced by Profile -->
+        <li>
+          <a href="#about">Profile</a>
+        </li>
+
+        <li>
+          <a href="#services" class="btn btn-primary" style="padding: 8px 18px;">
+            Rent Gear
+          </a>
+        </li>
+
       </ul>
     </div>
   </header>
 
-  <!-- 1. HOME: HERO SECTION -->
+
+  <!-- =========================
+       1. HOME
+  ========================= -->
+
   <section class="hero" id="home">
+
     <div>
+
       <div class="hero-badge">
-        <i class="fa-solid fa-shield-halved"></i> Managed Peer-to-Peer Infrastructure
+        <i class="fa-solid fa-shield-halved"></i>
+        Managed Peer-to-Peer Infrastructure
       </div>
-      <h1>Rent What You Need. <span>Earn From What You Own.</span></h1>
-      <p>High purchase costs shouldn't hold back creators and professionals. Rently provides safe access to premium cameras, projectors, audio, and tools with <strong>verified local RentPoint hubs</strong> and a <strong>zero-deposit framework</strong>.</p>
-      
+
+      <h1>
+        Rent What You Need.
+        <span>Earn From What You Own.</span>
+      </h1>
+
+      <p>
+        High purchase costs shouldn't hold back creators and professionals.
+        Rently provides safe access to premium cameras, projectors, audio,
+        and tools with <strong>verified local RentPoint hubs</strong> and a
+        <strong>zero-deposit framework</strong>.
+      </p>
+
       <div class="hero-actions">
+
         <a href="#services" class="btn btn-primary">
-          <i class="fa-solid fa-magnifying-glass"></i> Explore Equipment
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Explore Equipment
         </a>
-        <a href="#contact" class="btn btn-outline">
-          <i class="fa-solid fa-store"></i> Become a RentPoint
+
+        <!-- Now points to RentPoints -->
+        <a href="#rentpoints" class="btn btn-outline">
+          <i class="fa-solid fa-store"></i>
+          Become a RentPoint
         </a>
+
       </div>
 
       <div class="hero-trust-points">
+
         <div class="trust-stat">
           <h4>₹0 Deposit</h4>
           <p>Risk-based KYC approval</p>
         </div>
+
         <div class="trust-stat">
           <h4>Local Hubs</h4>
           <p>Physical partner verification</p>
         </div>
+
         <div class="trust-stat">
           <h4>OTP Secured</h4>
           <p>Controlled handovers</p>
         </div>
+
       </div>
+
     </div>
 
-    <!-- Live Interactive App Mockup -->
+
+    <!-- HOME MOCKUP - Apex Camera Care Hub removed -->
     <div>
+
       <div class="mock-handover-card">
+
         <div class="card-top">
+
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span class="hub-chip">RentPoint Hub Active</span>
-            <small><i class="fa-solid fa-clock"></i> Pickup Window Ready</small>
+
+            <span class="hub-chip">
+              Secure Handover
+            </span>
+
+            <small>
+              <i class="fa-solid fa-shield-halved"></i>
+              Verified
+            </small>
+
           </div>
-          <h3 style="color:#fff; margin-top: 10px;">Apex Camera Care Hub</h3>
-          <p style="font-size: 12px; color: #cbd5e1;"><i class="fa-solid fa-location-dot"></i> Bandra West, Mumbai (0.8 km)</p>
+
+          <h3 style="color:#fff; margin-top: 10px;">
+            Rently Smart Handover
+          </h3>
+
+          <p style="font-size: 12px; color: #cbd5e1;">
+            <i class="fa-solid fa-lock"></i>
+            Secure digital equipment release
+          </p>
+
         </div>
+
+
         <div class="card-content">
+
           <div style="display: flex; gap: 12px; align-items: center;">
-            <div style="width: 50px; height: 50px; background: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-              <i class="fa-solid fa-camera" style="color: var(--primary); font-size: 24px;"></i>
+
+            <div
+              style="
+                width: 50px;
+                height: 50px;
+                background: #e2e8f0;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <i
+                class="fa-solid fa-camera"
+                style="color: var(--primary); font-size: 24px;"
+              ></i>
             </div>
+
             <div>
-              <strong style="font-size: 14px;">Sony FX3 Cinema Line</strong>
-              <div style="font-size: 11px; color: #16A34A; font-weight: 600;"><i class="fa-solid fa-circle-check"></i> Inspected & Condition Sealed</div>
+
+              <strong style="font-size: 14px;">
+                Sony FX3 Cinema Line
+              </strong>
+
+              <div
+                style="
+                  font-size: 11px;
+                  color: #16A34A;
+                  font-weight: 600;
+                "
+              >
+                <i class="fa-solid fa-circle-check"></i>
+                Inspected & Condition Sealed
+              </div>
+
             </div>
+
           </div>
+
 
           <div class="otp-display-box">
-            <span style="font-size: 11px; font-weight: 600; color: #777; text-transform: uppercase;">Handover Secret OTP</span>
-            <div class="otp-code">592 108</div>
-            <span style="font-size: 11px; color: #888;">Present to counter agent for digital release</span>
+
+            <span
+              style="
+                font-size: 11px;
+                font-weight: 600;
+                color: #777;
+                text-transform: uppercase;
+              "
+            >
+              Handover Secret OTP
+            </span>
+
+            <div class="otp-code">
+              592 108
+            </div>
+
+            <span
+              style="
+                font-size: 11px;
+                color: #888;
+              "
+            >
+              Present to counter agent for digital release
+            </span>
+
           </div>
 
-          <div style="font-size: 12px; color: #555; display: flex; justify-content: space-between;">
-            <span>Daily Base: <strong>₹2,400/day</strong></span>
-            <span>Security Hold: <strong style="color: #16A34A;">₹0 (Verified)</strong></span>
+
+          <div
+            style="
+              font-size: 12px;
+              color: #555;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+
+            <span>
+              Daily Base:
+              <strong>₹2,400/day</strong>
+            </span>
+
+            <span>
+              Security Hold:
+              <strong style="color: #16A34A;">
+                ₹0 (Verified)
+              </strong>
+            </span>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- 2. ABOUT US: THE RENTLY STORY & BUSINESS MODEL -->
-  <section class="section-wrap" id="about" style="background: #fff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+
+  <!-- =========================
+       2. ABOUT MODEL
+  ========================= -->
+
+  <section
+    class="section-wrap"
+    id="about"
+    style="
+      background: #fff;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    "
+  >
+
     <div class="section-title">
-      <h2>The Rently Philosophy</h2>
-      <p>Traditional informal peer-to-peer rentals suffer from scheduling conflicts, distrust, and steep security deposits. Rently solves this with a managed transaction layer.</p>
+
+      <h2>
+        The Rently Philosophy
+      </h2>
+
+      <p>
+        Traditional informal peer-to-peer rentals suffer from scheduling
+        conflicts, distrust, and steep security deposits. Rently solves this
+        with a managed transaction layer.
+      </p>
+
     </div>
+
 
     <div class="grid-3">
-      <div class="about-card">
-        <div class="about-icon"><i class="fa-solid fa-store"></i></div>
-        <h3>The RentPoint Network</h3>
-        <p>Instead of awkward meetings with strangers, owners drop items at local vetted partner shops (camera stores, IT shops). Renters pick up after condition checks.</p>
-      </div>
 
       <div class="about-card">
-        <div class="about-icon"><i class="fa-solid fa-lock-open"></i></div>
-        <h3>Low / Zero-Deposit Framework</h3>
-        <p>Large cash deposits discourage first-time renters. Through progressive digital KYC and authorization holds, verified renters access gear without friction.</p>
+
+        <div class="about-icon">
+          <i class="fa-solid fa-store"></i>
+        </div>
+
+        <h3>
+          The RentPoint Network
+        </h3>
+
+        <p>
+          Instead of awkward meetings with strangers, owners drop items at
+          local vetted partner shops such as camera stores and IT shops.
+          Renters pick up after condition checks.
+        </p>
+
       </div>
 
+
       <div class="about-card">
-        <div class="about-icon"><i class="fa-solid fa-shield-heart"></i></div>
-        <h3>Anti-Bypass Protection</h3>
-        <p>We keep transactions safe with digital timestamps, accessory checklists, tamper evidence, and automated payouts that private informal deals cannot provide.</p>
+
+        <div class="about-icon">
+          <i class="fa-solid fa-lock-open"></i>
+        </div>
+
+        <h3>
+          Low / Zero-Deposit Framework
+        </h3>
+
+        <p>
+          Large cash deposits discourage first-time renters. Through
+          progressive digital KYC and authorization holds, verified renters
+          access gear without friction.
+        </p>
+
       </div>
+
+
+      <div class="about-card">
+
+        <div class="about-icon">
+          <i class="fa-solid fa-shield-heart"></i>
+        </div>
+
+        <h3>
+          Anti-Bypass Protection
+        </h3>
+
+        <p>
+          We keep transactions safe with digital timestamps, accessory
+          checklists, tamper evidence, and automated payouts that private
+          informal deals cannot provide.
+        </p>
+
+      </div>
+
     </div>
+
+
+    <!-- =========================
+         RENTPOINT SECTION
+         APEX CAMERA CARE HUB MOVED HERE
+    ========================= -->
+
+    <div class="rentpoint-section" id="rentpoints">
+
+      <div class="rentpoint-content">
+
+        <div class="rentpoint-info">
+
+          <div
+            style="
+              display:inline-flex;
+              align-items:center;
+              gap:8px;
+              background:rgba(255,138,31,0.12);
+              color:var(--secondary);
+              padding:6px 12px;
+              border-radius:20px;
+              font-size:11px;
+              font-weight:700;
+              margin-bottom:15px;
+            "
+          >
+            <i class="fa-solid fa-location-dot"></i>
+            RENTPOINT NETWORK
+          </div>
+
+          <h2>
+            Your Local
+            <span>RentPoint.</span>
+          </h2>
+
+          <p>
+            RentPoints are verified physical partner locations where Rently
+            equipment is stored, inspected, handed over and returned safely.
+            They eliminate the uncertainty of meeting strangers for
+            peer-to-peer rentals.
+          </p>
+
+
+          <div class="rentpoint-features">
+
+            <div class="rentpoint-feature">
+
+              <i class="fa-solid fa-box-open"></i>
+
+              <span>
+                Secure physical equipment custody
+              </span>
+
+            </div>
+
+
+            <div class="rentpoint-feature">
+
+              <i class="fa-solid fa-clipboard-check"></i>
+
+              <span>
+                Condition check before every handover
+              </span>
+
+            </div>
+
+
+            <div class="rentpoint-feature">
+
+              <i class="fa-solid fa-key"></i>
+
+              <span>
+                OTP-controlled pickup and return
+              </span>
+
+            </div>
+
+
+            <div class="rentpoint-feature">
+
+              <i class="fa-solid fa-shield-halved"></i>
+
+              <span>
+                Verified partner location
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- APEX CAMERA CARE HUB -->
+
+        <div class="apex-hub-card">
+
+          <div class="apex-header">
+
+            <div class="apex-header-row">
+
+              <span class="hub-chip">
+                RENTPOINT HUB
+              </span>
+
+              <span class="apex-status">
+                <i class="fa-solid fa-circle-check"></i>
+                ACTIVE
+              </span>
+
+            </div>
+
+            <h3>
+              Apex Camera Care Hub
+            </h3>
+
+            <div class="apex-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Bandra West, Mumbai · 0.8 km
+            </div>
+
+          </div>
+
+
+          <div class="apex-body">
+
+            <div class="apex-equipment">
+
+              <div class="apex-equipment-icon">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+
+              <div>
+
+                <strong>
+                  Sony FX3 Cinema Line
+                </strong>
+
+                <small>
+                  <i class="fa-solid fa-circle-check"></i>
+                  Inspected & Condition Sealed
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="apex-process">
+
+              <div class="apex-step">
+
+                <i class="fa-solid fa-box"></i>
+
+                <span>
+                  Store
+                </span>
+
+              </div>
+
+
+              <div class="apex-step">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+                <span>
+                  Inspect
+                </span>
+
+              </div>
+
+
+              <div class="apex-step">
+
+                <i class="fa-solid fa-handshake"></i>
+
+                <span>
+                  Handover
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div
+              style="
+                margin-top:18px;
+                padding:12px;
+                background:#FFF7ED;
+                border:1px dashed var(--secondary);
+                border-radius:10px;
+                font-size:11px;
+                color:#666;
+                text-align:center;
+              "
+            >
+              <strong style="color:var(--primary);">
+                RentPoint Advantage
+              </strong>
+              <br>
+              No stranger-to-stranger handover.
+              Rently manages the physical exchange.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- 3. PRODUCTS & SERVICES SHOWCASE -->
+
+  <!-- =========================
+       3. EQUIPMENT CATALOG
+  ========================= -->
+
   <section class="section-wrap" id="services">
+
     <div class="section-title">
-      <h2>Browse Available Inventory</h2>
-      <p>Explore high-demand equipment ready for pickup at verified RentPoints nearby.</p>
+
+      <h2>
+        Browse Available Inventory
+      </h2>
+
+      <p>
+        Explore high-demand equipment ready for pickup at verified RentPoints nearby.
+      </p>
+
     </div>
+
 
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterItems('all')">All Categories</button>
-      <button class="filter-btn" onclick="filterItems('camera')">Cameras & Cine</button>
-      <button class="filter-btn" onclick="filterItems('projector')">Projectors & Displays</button>
-      <button class="filter-btn" onclick="filterItems('audio')">Audio & PA Gear</button>
-      <button class="filter-btn" onclick="filterItems('tools')">Tools & Workshop</button>
+
+      <button
+        class="filter-btn active"
+        onclick="filterItems('all', this)"
+      >
+        All Categories
+      </button>
+
+      <button
+        class="filter-btn"
+        onclick="filterItems('camera', this)"
+      >
+        Cameras & Cine
+      </button>
+
+      <button
+        class="filter-btn"
+        onclick="filterItems('projector', this)"
+      >
+        Projectors & Displays
+      </button>
+
+      <button
+        class="filter-btn"
+        onclick="filterItems('audio', this)"
+      >
+        Audio & PA Gear
+      </button>
+
+      <button
+        class="filter-btn"
+        onclick="filterItems('tools', this)"
+      >
+        Tools & Workshop
+      </button>
+
     </div>
+
 
     <div class="catalog-grid" id="catalogGrid">
-      <!-- Item 1 -->
+
+      <!-- ITEM 1 -->
+
       <div class="gear-card" data-cat="camera">
+
         <div class="gear-img-ph">
+
           <i class="fa-solid fa-camera"></i>
-          <span class="card-badge">Grade: Like New</span>
+
+          <span class="card-badge">
+            Grade: Like New
+          </span>
+
         </div>
+
         <div class="gear-body">
-          <h4 style="font-size: 16px;">Sony Alpha A7 IV Kit + 28-70mm</h4>
-          <div class="gear-hub"><i class="fa-solid fa-store"></i> Apex Studio Hub (0.8 km away)</div>
-          <p style="font-size: 12px; color: #666; margin-bottom: 12px;">Full frame hybrid camera body with lens, 2x batteries, dual SD slots.</p>
-          <div class="gear-price-row">
-            <div>
-              <div class="gear-price">₹1,800 <span style="font-size:11px; font-weight: normal; color:#666;">/day</span></div>
-              <small style="color: #16A34A; font-weight: 600;">₹0 Deposit Eligible</small>
-            </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;">Book</a>
+
+          <h4 style="font-size: 16px;">
+            Sony Alpha A7 IV Kit + 28-70mm
+          </h4>
+
+          <div class="gear-hub">
+            <i class="fa-solid fa-store"></i>
+            Apex Studio Hub (0.8 km away)
           </div>
+
+          <p style="font-size: 12px; color: #666; margin-bottom: 12px;">
+            Full frame hybrid camera body with lens,
+            2x batteries, dual SD slots.
+          </p>
+
+          <div class="gear-price-row">
+
+            <div>
+
+              <div class="gear-price">
+                ₹1,800
+                <span style="font-size:11px; font-weight:normal; color:#666;">
+                  /day
+                </span>
+              </div>
+
+              <small style="color:#16A34A; font-weight:600;">
+                ₹0 Deposit Eligible
+              </small>
+
+            </div>
+
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              style="padding:6px 14px; font-size:12px;"
+            >
+              Book
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Item 2 -->
+
+      <!-- ITEM 2 -->
+
       <div class="gear-card" data-cat="projector">
+
         <div class="gear-img-ph">
+
           <i class="fa-solid fa-video"></i>
-          <span class="card-badge">Grade: Excellent</span>
+
+          <span class="card-badge">
+            Grade: Excellent
+          </span>
+
         </div>
+
         <div class="gear-body">
-          <h4 style="font-size: 16px;">BenQ 4K HDR Home Cinema Projector</h4>
-          <div class="gear-hub"><i class="fa-solid fa-store"></i> QuickTech Hub (1.4 km away)</div>
-          <p style="font-size: 12px; color: #666; margin-bottom: 12px;">3000 ANSI Lumens, 4K UHD, HDMI 2.1 cable, with travel hardcase.</p>
-          <div class="gear-price-row">
-            <div>
-              <div class="gear-price">₹950 <span style="font-size:11px; font-weight: normal; color:#666;">/day</span></div>
-              <small style="color: #16A34A; font-weight: 600;">Zero Deposit Hold</small>
-            </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;">Book</a>
+
+          <h4 style="font-size:16px;">
+            BenQ 4K HDR Home Cinema Projector
+          </h4>
+
+          <div class="gear-hub">
+            <i class="fa-solid fa-store"></i>
+            QuickTech Hub (1.4 km away)
           </div>
+
+          <p style="font-size:12px;color:#666;margin-bottom:12px;">
+            3000 ANSI Lumens, 4K UHD, HDMI 2.1 cable,
+            with travel hardcase.
+          </p>
+
+          <div class="gear-price-row">
+
+            <div>
+
+              <div class="gear-price">
+                ₹950
+                <span style="font-size:11px;font-weight:normal;color:#666;">
+                  /day
+                </span>
+              </div>
+
+              <small style="color:#16A34A;font-weight:600;">
+                Zero Deposit Hold
+              </small>
+
+            </div>
+
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              style="padding:6px 14px;font-size:12px;"
+            >
+              Book
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Item 3 -->
+
+      <!-- ITEM 3 -->
+
       <div class="gear-card" data-cat="audio">
+
         <div class="gear-img-ph">
+
           <i class="fa-solid fa-microphone-lines"></i>
-          <span class="card-badge">Grade: Like New</span>
+
+          <span class="card-badge">
+            Grade: Like New
+          </span>
+
         </div>
+
         <div class="gear-body">
-          <h4 style="font-size: 16px;">DJI Mic 2 Dual Wireless Kit</h4>
-          <div class="gear-hub"><i class="fa-solid fa-store"></i> SoundCraft Hub (2.1 km away)</div>
-          <p style="font-size: 12px; color: #666; margin-bottom: 12px;">32-bit float recording, 250m range, 2 TX + 1 RX with charging case.</p>
-          <div class="gear-price-row">
-            <div>
-              <div class="gear-price">₹650 <span style="font-size:11px; font-weight: normal; color:#666;">/day</span></div>
-              <small style="color: #16A34A; font-weight: 600;">₹0 Deposit Eligible</small>
-            </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;">Book</a>
+
+          <h4 style="font-size:16px;">
+            DJI Mic 2 Dual Wireless Kit
+          </h4>
+
+          <div class="gear-hub">
+            <i class="fa-solid fa-store"></i>
+            SoundCraft Hub (2.1 km away)
           </div>
+
+          <p style="font-size:12px;color:#666;margin-bottom:12px;">
+            32-bit float recording, 250m range,
+            2 TX + 1 RX with charging case.
+          </p>
+
+          <div class="gear-price-row">
+
+            <div>
+
+              <div class="gear-price">
+                ₹650
+                <span style="font-size:11px;font-weight:normal;color:#666;">
+                  /day
+                </span>
+              </div>
+
+              <small style="color:#16A34A;font-weight:600;">
+                ₹0 Deposit Eligible
+              </small>
+
+            </div>
+
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              style="padding:6px 14px;font-size:12px;"
+            >
+              Book
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Item 4 -->
+
+      <!-- ITEM 4 -->
+
       <div class="gear-card" data-cat="tools">
+
         <div class="gear-img-ph">
+
           <i class="fa-solid fa-screwdriver-wrench"></i>
-          <span class="card-badge">Grade: Good</span>
+
+          <span class="card-badge">
+            Grade: Good
+          </span>
+
         </div>
+
         <div class="gear-body">
-          <h4 style="font-size: 16px;">Bosch Professional Hammer Drill Kit</h4>
-          <div class="gear-hub"><i class="fa-solid fa-store"></i> City Hardware Hub (0.4 km away)</div>
-          <p style="font-size: 12px; color: #666; margin-bottom: 12px;">Cordless brushless motor, 18V 4.0Ah battery pack, assorted masonry bits.</p>
-          <div class="gear-price-row">
-            <div>
-              <div class="gear-price">₹400 <span style="font-size:11px; font-weight: normal; color:#666;">/day</span></div>
-              <small style="color: #16A34A; font-weight: 600;">Standard Verification</small>
-            </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;">Book</a>
+
+          <h4 style="font-size:16px;">
+            Bosch Professional Hammer Drill Kit
+          </h4>
+
+          <div class="gear-hub">
+            <i class="fa-solid fa-store"></i>
+            City Hardware Hub (0.4 km away)
           </div>
+
+          <p style="font-size:12px;color:#666;margin-bottom:12px;">
+            Cordless brushless motor, 18V 4.0Ah battery pack,
+            assorted masonry bits.
+          </p>
+
+          <div class="gear-price-row">
+
+            <div>
+
+              <div class="gear-price">
+                ₹400
+                <span style="font-size:11px;font-weight:normal;color:#666;">
+                  /day
+                </span>
+              </div>
+
+              <small style="color:#16A34A;font-weight:600;">
+                Standard Verification
+              </small>
+
+            </div>
+
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              style="padding:6px 14px;font-size:12px;"
+            >
+              Book
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Item 5 -->
+
+      <!-- ITEM 5 -->
+
       <div class="gear-card" data-cat="camera">
+
         <div class="gear-img-ph">
+
           <i class="fa-solid fa-circle-nodes"></i>
-          <span class="card-badge">Grade: Pro Tested</span>
+
+          <span class="card-badge">
+            Grade: Pro Tested
+          </span>
+
         </div>
+
         <div class="gear-body">
-          <h4 style="font-size: 16px;">DJI Ronin RS3 Pro Gimbal Stabilizer</h4>
-          <div class="gear-hub"><i class="fa-solid fa-store"></i> Apex Studio Hub (0.8 km away)</div>
-          <p style="font-size: 12px; color: #666; margin-bottom: 12px;">Automated axis locks, 4.5kg payload, carbon fiber construction.</p>
-          <div class="gear-price-row">
-            <div>
-              <div class="gear-price">₹1,100 <span style="font-size:11px; font-weight: normal; color:#666;">/day</span></div>
-              <small style="color: #16A34A; font-weight: 600;">₹0 Deposit Eligible</small>
-            </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;">Book</a>
+
+          <h4 style="font-size:16px;">
+            DJI Ronin RS3 Pro Gimbal Stabilizer
+          </h4>
+
+          <div class="gear-hub">
+            <i class="fa-solid fa-store"></i>
+            Apex Studio Hub (0.8 km away)
           </div>
+
+          <p style="font-size:12px;color:#666;margin-bottom:12px;">
+            Automated axis locks, 4.5kg payload,
+            carbon fiber construction.
+          </p>
+
+          <div class="gear-price-row">
+
+            <div>
+
+              <div class="gear-price">
+                ₹1,100
+                <span style="font-size:11px;font-weight:normal;color:#666;">
+                  /day
+                </span>
+              </div>
+
+              <small style="color:#16A34A;font-weight:600;">
+                ₹0 Deposit Eligible
+              </small>
+
+            </div>
+
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              style="padding:6px 14px;font-size:12px;"
+            >
+              Book
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Item 6 -->
+
+      <!-- ITEM 6 -->
+
       <div class="gear-card" data-cat="projector">
+
         <div class="gear-img-ph">
+
           <i class="fa-solid fa-tv"></i>
-          <span class="card-badge">Grade: Brand New</span>
+
+          <span class="card-badge">
+            Grade: Brand New
+          </span>
+
         </div>
+
         <div class="gear-body">
-          <h4 style="font-size: 16px;">100-inch Portable Projection Screen</h4>
-          <div class="gear-hub"><i class="fa-solid fa-store"></i> QuickTech Hub (1.4 km away)</div>
-          <p style="font-size: 12px; color: #666; margin-bottom: 12px;">Tripod stand included, 16:9 4K HD outdoor/indoor projection canvas.</p>
+
+          <h4 style="font-size:16px;">
+            100-inch Portable Projection Screen
+          </h4>
+
+          <div class="gear-hub">
+            <i class="fa-solid fa-store"></i>
+            QuickTech Hub (1.4 km away)
+          </div>
+
+          <p style="font-size:12px;color:#666;margin-bottom:12px;">
+            Tripod stand included, 16:9 4K HD
+            outdoor/indoor projection canvas.
+          </p>
+
           <div class="gear-price-row">
+
             <div>
-              <div class="gear-price">₹350 <span style="font-size:11px; font-weight: normal; color:#666;">/day</span></div>
-              <small style="color: #16A34A; font-weight: 600;">Instant Pickup</small>
+
+              <div class="gear-price">
+                ₹350
+                <span style="font-size:11px;font-weight:normal;color:#666;">
+                  /day
+                </span>
+              </div>
+
+              <small style="color:#16A34A;font-weight:600;">
+                Instant Pickup
+              </small>
+
             </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;">Book</a>
+
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              style="padding:6px 14px;font-size:12px;"
+            >
+              Book
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- 4. CONTACT & LIVE LEAD CAPTURE SECTION -->
+
+  <!-- =========================
+       4. COMPACT CONTACT US
+  ========================= -->
+
   <section class="section-wrap" id="contact">
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Connect With Rently</h3>
-        <p>Have an underused camera or audio rig? Want your local store to become an authorized RentPoint hub? Get in touch with our operations team.</p>
 
-        <div class="contact-point">
-          <i class="fa-solid fa-location-dot"></i>
-          <div>
-            <strong>Operations Headquarters</strong>
-            <p style="font-size: 13px; color: #666;">Rently Managed Hub Network, Mumbai, Maharashtra</p>
-          </div>
-        </div>
+    <div
+      style="
+        text-align:center;
+        margin-bottom:22px;
+      "
+    >
 
-        <div class="contact-point">
-          <i class="fa-solid fa-envelope"></i>
-          <div>
-            <strong>Email Support & Partnerships</strong>
-            <p style="font-size: 13px; color: #666;">partners@rently.in | support@rently.in</p>
-          </div>
-        </div>
+      <h2 style="font-size:27px;">
+        Contact Us
+      </h2>
 
-        <div class="contact-point">
-          <i class="fa-solid fa-handshake"></i>
-          <div>
-            <strong>RentPoint Commercial Partner Program</strong>
-            <p style="font-size: 13px; color: #666;">Earn footfall and commission per handover/return verification.</p>
-          </div>
-        </div>
-      </div>
+      <p
+        style="
+          color:#777;
+          font-size:12px;
+          margin-top:5px;
+        "
+      >
+        Questions, partnerships or RentPoint enquiries?
+        We're here to help.
+      </p>
 
-      <!-- Live Connected Form (Uses Formspree for serverless live delivery) -->
-      <div>
-        <div class="success-alert" id="formSuccess">
-          <i class="fa-solid fa-circle-check"></i> Thank you! Your request has been received. Our team will contact you within 24 hours.
-        </div>
-
-        <form id="contactForm" action="https://formspree.io/f/xbjnqewq" method="POST">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Rahul Sharma" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="rahul@example.com" required />
-          </div>
-
-          <div class="form-group">
-            <label for="interest">I am interested in:</label>
-            <select id="interest" name="interest" class="form-control">
-              <option value="Renting Equipment">Renting Equipment (Zero Deposit)</option>
-              <option value="Listing My Equipment">Listing My Gear (Earn Passive Income)</option>
-              <option value="Becoming a RentPoint Hub">Registering as a RentPoint Hub</option>
-              <option value="General Inquiry">General Partnership</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message / Location Details</label>
-            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Mention item details, required dates, or store location..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" id="submitBtn">
-            <i class="fa-solid fa-paper-plane"></i> Send Inquiries
-          </button>
-        </form>
-      </div>
     </div>
+
+
+    <div class="compact-contact">
+
+      <div class="compact-contact-info">
+
+        <h3>
+          Connect With Rently
+        </h3>
+
+        <p>
+          Have equipment to list, need help renting,
+          or want your store to become a RentPoint?
+        </p>
+
+
+        <div class="compact-contact-details">
+
+          <div class="compact-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            Mumbai, Maharashtra
+          </div>
+
+          <div class="compact-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            partners@rently.in
+          </div>
+
+          <div class="compact-contact-item">
+            <i class="fa-solid fa-handshake"></i>
+            RentPoint Partners
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Compact Form -->
+
+      <div>
+
+        <div class="success-alert" id="formSuccess">
+
+          <i class="fa-solid fa-circle-check"></i>
+          Thank you! Your request has been received.
+
+        </div>
+
+
+        <form
+          id="contactForm"
+          class="compact-form"
+          action="https://formspree.io/f/xbjnqewq"
+          method="POST"
+        >
+
+          <div>
+
+            <label for="name">
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Your name"
+              required
+            />
+
+          </div>
+
+
+          <div>
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="you@example.com"
+              required
+            />
+
+          </div>
+
+
+          <div class="full-width">
+
+            <label for="interest">
+              I'm interested in
+            </label>
+
+            <select
+              id="interest"
+              name="interest"
+              class="form-control"
+            >
+
+              <option value="Renting Equipment">
+                Renting Equipment
+              </option>
+
+              <option value="Listing My Equipment">
+                Listing My Gear
+              </option>
+
+              <option value="Becoming a RentPoint Hub">
+                Becoming a RentPoint
+              </option>
+
+              <option value="General Inquiry">
+                General Inquiry
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="full-width">
+
+            <label for="message">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              class="form-control"
+              rows="2"
+              placeholder="Tell us how we can help..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <div class="full-width">
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              id="submitBtn"
+            >
+
+              <i class="fa-solid fa-paper-plane"></i>
+              Send Inquiry
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
+
     <div class="footer-wrap">
+
       <div>
-        <div class="brand-logo" style="margin-bottom: 14px;">
-          <div class="logo-badge" style="background: #fff;">
-            <span style="color: var(--primary);">R</span>
+
+        <div
+          class="brand-logo"
+          style="margin-bottom:14px;"
+        >
+
+          <div
+            class="logo-badge"
+            style="background:#fff;"
+          >
+
+            <span style="color:var(--primary);">
+              R
+            </span>
+
             <i class="fa-solid fa-arrow-down-long arrow"></i>
+
           </div>
-          <span class="logo-text" style="color: #fff;">RENTLY</span>
+
+          <span
+            class="logo-text"
+            style="color:#fff;"
+          >
+            RENTLY
+          </span>
+
         </div>
-        <p style="font-size: 13px; color: #94A3B8; max-width: 320px;">Quality Equipment. For Everyone. Access over ownership powered by trusted local RentPoint hubs.</p>
-        <p style="font-size: 11px; color: var(--secondary); margin-top: 10px; font-weight: 600;">RENT &bull; USE &bull; REPEAT</p>
+
+
+        <p
+          style="
+            font-size:13px;
+            color:#94A3B8;
+            max-width:320px;
+          "
+        >
+          Quality Equipment. For Everyone.
+          Access over ownership powered by trusted
+          local RentPoint hubs.
+        </p>
+
+
+        <p
+          style="
+            font-size:11px;
+            color:var(--secondary);
+            margin-top:10px;
+            font-weight:600;
+          "
+        >
+          RENT &bull; USE &bull; REPEAT
+        </p>
+
       </div>
 
-      <div class="footer-col">
-        <h5>Marketplace</h5>
-        <ul>
-          <li><a href="#services">Cameras & Lenses</a></li>
-          <li><a href="#services">4K Projectors</a></li>
-          <li><a href="#services">Audio Systems</a></li>
-          <li><a href="#services">Power Tools</a></li>
-        </ul>
-      </div>
 
       <div class="footer-col">
-        <h5>RentPoint Network</h5>
+
+        <h5>
+          Marketplace
+        </h5>
+
         <ul>
-          <li><a href="#about">Hub Operations</a></li>
-          <li><a href="#contact">Become a Partner</a></li>
-          <li><a href="#about">Condition Checks</a></li>
-          <li><a href="#about">Dispute Settlement</a></li>
+
+          <li>
+            <a href="#services">
+              Cameras & Lenses
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              4K Projectors
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              Audio Systems
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              Power Tools
+            </a>
+          </li>
+
         </ul>
+
       </div>
 
+
       <div class="footer-col">
-        <h5>Legal & Trust</h5>
+
+        <h5>
+          RentPoint Network
+        </h5>
+
         <ul>
-          <li><a href="#">Zero-Deposit Policy</a></li>
-          <li><a href="#">Damage Protection</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+
+          <li>
+            <a href="#rentpoints">
+              Hub Operations
+            </a>
+          </li>
+
+          <li>
+            <a href="#rentpoints">
+              Become a Partner
+            </a>
+          </li>
+
+          <li>
+            <a href="#rentpoints">
+              Condition Checks
+            </a>
+          </li>
+
+          <li>
+            <a href="#rentpoints">
+              Secure Handover
+            </a>
+          </li>
+
         </ul>
+
       </div>
+
+
+      <div class="footer-col">
+
+        <h5>
+          Legal & Trust
+        </h5>
+
+        <ul>
+
+          <li>
+            <a href="#">
+              Zero-Deposit Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Damage Protection
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Terms of Service
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Privacy Policy
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
     </div>
+
 
     <div class="copyright">
-      &copy; 2026 Rently Technologies Pvt. Ltd. All rights reserved. Equipment sharing for a greener tomorrow.
+
+      &copy; 2026 Rently Technologies Pvt. Ltd.
+      All rights reserved.
+      Equipment sharing for a greener tomorrow.
+
     </div>
+
   </footer>
 
-  <!-- INTERACTIVITY & WORKING LEAD CAPTURE SCRIPT -->
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
-    // Mobile navigation toggle
-    const menuBtn = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+
+    /* =========================
+       MOBILE NAVIGATION
+    ========================= */
+
+    const menuBtn =
+      document.getElementById('menuToggle');
+
+    const navLinks =
+      document.getElementById('navLinks');
+
+
     menuBtn.addEventListener('click', () => {
+
       navLinks.classList.toggle('active');
+
     });
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
-    });
 
-    // Category filter logic
-    function filterItems(category) {
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+    document
+      .querySelectorAll('.nav-links a')
+      .forEach(link => {
 
-      const cards = document.querySelectorAll('.gear-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-cat') === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
+        link.addEventListener('click', () => {
 
-    // Working Lead Capture Submission Handler
-    const form = document.getElementById('contactForm');
-    const successAlert = document.getElementById('formSuccess');
-    const submitBtn = document.getElementById('submitBtn');
+          navLinks.classList.remove('active');
 
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
         });
 
-        if (response.ok) {
-          form.reset();
-          form.style.display = 'none';
-          successAlert.style.display = 'block';
-        } else {
-          alert('Submission error. Please ensure all fields are filled.');
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Inquiries';
-        }
-      } catch (error) {
-        // Fallback simulated success if offline
-        form.reset();
-        form.style.display = 'none';
-        successAlert.style.display = 'block';
+      });
+
+
+    /* =========================
+       RENTPOINT HIGHLIGHT
+    ========================= */
+
+    function highlightRentPoint() {
+
+      const rentPoint =
+        document.getElementById('rentpoints');
+
+      if (!rentPoint) return;
+
+
+      rentPoint.classList.remove(
+        'highlight-rentpoint'
+      );
+
+
+      /*
+        Force browser to restart animation
+      */
+
+      void rentPoint.offsetWidth;
+
+
+      rentPoint.classList.add(
+        'highlight-rentpoint'
+      );
+
+
+      setTimeout(() => {
+
+        rentPoint.classList.remove(
+          'highlight-rentpoint'
+        );
+
+      }, 2300);
+
+    }
+
+
+    /* =========================
+       RENTPOINT NAVIGATION
+    ========================= */
+
+    document
+      .querySelectorAll(
+        'a[href="#rentpoints"]'
+      )
+      .forEach(link => {
+
+        link.addEventListener('click', function(e) {
+
+          e.preventDefault();
+
+
+          const target =
+            document.getElementById('rentpoints');
+
+          if (!target) return;
+
+
+          const headerOffset = 85;
+
+          const targetPosition =
+            target.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerOffset;
+
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+
+
+          /*
+            Highlight after scrolling begins
+          */
+
+          setTimeout(() => {
+
+            highlightRentPoint();
+
+          }, 650);
+
+        });
+
+      });
+
+
+    /* =========================
+       CATEGORY FILTER
+    ========================= */
+
+    function filterItems(category, clickedButton) {
+
+      const buttons =
+        document.querySelectorAll(
+          '.filter-btn'
+        );
+
+
+      buttons.forEach(btn => {
+
+        btn.classList.remove('active');
+
+      });
+
+
+      if (clickedButton) {
+
+        clickedButton.classList.add('active');
+
       }
-    });
+
+
+      const cards =
+        document.querySelectorAll(
+          '.gear-card'
+        );
+
+
+      cards.forEach(card => {
+
+        if (
+          category === 'all' ||
+          card.getAttribute('data-cat') === category
+        ) {
+
+          card.style.display = 'flex';
+
+        } else {
+
+          card.style.display = 'none';
+
+        }
+
+      });
+
+    }
+
+
+    /* =========================
+       CONTACT FORM
+    ========================= */
+
+    const form =
+      document.getElementById('contactForm');
+
+    const successAlert =
+      document.getElementById('formSuccess');
+
+    const submitBtn =
+      document.getElementById('submitBtn');
+
+
+    form.addEventListener(
+      'submit',
+      async function(e) {
+
+        e.preventDefault();
+
+
+        submitBtn.disabled = true;
+
+        submitBtn.innerHTML =
+          '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+
+        const formData =
+          new FormData(form);
+
+
+        try {
+
+          const response =
+            await fetch(
+              form.action,
+              {
+                method: 'POST',
+                body: formData,
+                headers: {
+                  'Accept': 'application/json'
+                }
+              }
+            );
+
+
+          if (response.ok) {
+
+            form.reset();
+
+            form.style.display = 'none';
+
+            successAlert.style.display =
+              'block';
+
+          } else {
+
+            alert(
+              'Submission error. Please ensure all fields are filled.'
+            );
+
+            submitBtn.disabled = false;
+
+            submitBtn.innerHTML =
+              '<i class="fa-solid fa-paper-plane"></i> Send Inquiry';
+
+          }
+
+        } catch (error) {
+
+          /*
+            Fallback for offline situations
+          */
+
+          form.reset();
+
+          form.style.display = 'none';
+
+          successAlert.style.display =
+            'block';
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       HANDLE DIRECT #RENTPOINTS
+       URL LOAD
+    ========================= */
+
+    window.addEventListener(
+      'load',
+      () => {
+
+        if (
+          window.location.hash ===
+          '#rentpoints'
+        ) {
+
+          setTimeout(
+            highlightRentPoint,
+            500
+          );
+
+        }
+
+      }
+    );
+
   </script>
+
 </body>
 </html>
+```
